@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: "Roboto", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background-color: aliceblue;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navSection{
+  border: 1px solid black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  background-color: black;
   color: white;
+  height: 80px;
+padding: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+.pro-section{
+  display: flex;
+  background-color: white;
 }
+.imgbox{
+  width: 80%;
+  padding-left: 20px;
+}
+.proImg{
+  width: 80%;
+}
+.proTile h2{
+  margin: 10px;
+}
+.subMenu ul li{
+  list-style: none;
+  margin: 26px;
+  margin-top: 10px;
+}
+.subMenu{
+  background-color: gray;
+  color: white;
+  height: 50px;
+}
+.subMenu ul{
+  display: inline-flex;
+ 
+}
+.page-section{
+  display: grid;
+  grid-template-columns: repeat(4,300px);
+  gap: 10px;
+}
+.pageImg{
+  width: 250px;
+  height: 250px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.pageImg img{
+  width: 100%;
+}
+.ing-image{
+  width: 500px;
+  height: 500px;
+}
+.ind-page{
+  display: flex;
+}
+.ing-image img{
+  width: 100%;
+}
+.ind-detaiils{
+  padding: 20px;
+}
+.space{
+  margin: 10px;
 }
