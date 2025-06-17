@@ -1,6 +1,7 @@
 import React from 'react'
 import { womanData } from '../Stores/Data/woman'
 import { useParams } from 'react-router-dom'
+import Navbar from '../Stores/Components/Navbar'
 
 const LadysSingle = () => {
     const {id}=useParams()
@@ -8,6 +9,8 @@ const LadysSingle = () => {
      console.log(id)
      console.log(product.image)
   return (
+    <>
+    <Navbar/>
     <div className="ind-page">
     <div className="ing-image">
       <img src={product.image} alt=''/>
@@ -28,6 +31,7 @@ const LadysSingle = () => {
     <button>Add to Cart</button>
    </div>
    </div>
+   </>
   )
 }
 

@@ -1,11 +1,14 @@
 import React from 'react'
 import { acData } from '../Stores/Data/ac'
 import { useParams } from 'react-router-dom'
+import Navbar from '../Stores/Components/Navbar'
 const AcSinglePage = () => {
      const {id}=useParams()
      const product =acData.find((item)=>item.id===id)
      console.log(id)
   return (
+    <>
+     <Navbar/>
        <div className="ind-page">
     <div className="ing-image">
       <img src={product.image} alt=''/>
@@ -26,7 +29,7 @@ const AcSinglePage = () => {
     <button>Add to Cart</button>
    </div>
    </div>
-  
+  </>
   )
 }
 

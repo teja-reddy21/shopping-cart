@@ -1,12 +1,15 @@
 import React from 'react'
 import { watchData } from '../Stores/Data/watch'
 import { useParams } from 'react-router-dom'
+import Navbar from '../Stores/Components/Navbar'
 const WatchSinglePage = () => {
     const {id}=useParams()
      const product =watchData.find((item)=>item.id===id)
      console.log(id)
      console.log(product.image)
   return (
+    <>
+    <Navbar/>
   <div className="ind-page">
     <div className="ing-image">
       <img src={product.image} alt=''/>
@@ -27,6 +30,7 @@ const WatchSinglePage = () => {
     <button>Add to Cart</button>
    </div>
    </div>
+   </>
   )
 }
 

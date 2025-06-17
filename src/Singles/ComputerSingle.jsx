@@ -1,11 +1,14 @@
 import React from 'react'
 import { computerData } from '../Stores/Data/computers'
 import { useParams } from 'react-router-dom'
+import Navbar from '../Stores/Components/Navbar'
 const ComputerSingle = () => {
     const {id}=useParams()
      const product =computerData.find((item)=>item.id===id)
      console.log(id)
   return (
+    <>
+    <Navbar/>
      <div className="ind-page">
     <div className="ing-image">
       <img src={product.image} alt=''/>
@@ -26,6 +29,7 @@ const ComputerSingle = () => {
     <button>Add to Cart</button>
    </div>
    </div>
+   </>
   )
 }
 

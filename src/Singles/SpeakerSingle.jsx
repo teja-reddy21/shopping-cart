@@ -1,12 +1,15 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { speakerData } from '../Stores/Data/speaker'
+import Navbar from '../Stores/Components/Navbar'
 const SpeakerSingle = () => {
      const {id}=useParams()
      const product =speakerData.find((item)=>item.id===id)
      console.log(id)
      console.log(product.image)
   return (
+    <>
+    <Navbar/>
     <div className="ind-page">
     <div className="ing-image">
       <img src={`/${product.image}`} alt=''/>
@@ -27,6 +30,7 @@ const SpeakerSingle = () => {
     <button>Add to Cart</button>
    </div>
    </div>
+   </>
   )
 }
 
