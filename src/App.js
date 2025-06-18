@@ -26,6 +26,7 @@ import WatchSinglePage from './Singles/WatchSinglePage';
 import LadysSingle from './Singles/LadysSingle';
 import MenSinglePage from './Singles/MenSinglePage';
 import SpeakerSingle from './Singles/SpeakerSingle';
+import UserCart from './Stores/User Cart/UserCart';
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
          <Route path='/ladys/:id' element={<LadysSingle/>}/>
          <Route path='/mens/:id' element={<MenSinglePage/>}/>
          <Route path='/speakers/:id' element={<SpeakerSingle/>}/>
+
+         <Route path='/cart' element={<UserCart/>}/>
     </Routes>
     </div>
   );
