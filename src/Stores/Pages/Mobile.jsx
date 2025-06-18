@@ -9,9 +9,12 @@ const Mobile = () => {
       if(selectedProduct.includes(mango)){
         setSelectedProduct(selectedProduct.filter(item=>item !== mango))
       }else{
-        setSelectedProduct([mango])
+        setSelectedProduct([...selectedProduct,mango])
       }
   }
+
+  const filteredProduct = selectedProduct.length===0?
+       mobileData : mobileData.filter((orange)=>selectedProduct.includes(orange.company))
   return (
     <> 
     <Navbar/>
@@ -21,7 +24,7 @@ const Mobile = () => {
         return (
           <div className='pro-input'>
             <label>
-              <input type="checked" checked={selectedProduct.includes(phone.company)}
+              <input type="checkbox" checked={selectedProduct.includes(phone.company)}
               onChange={()=>companyHandler(phone.company)}
               />
               {phone.company}
@@ -31,7 +34,7 @@ const Mobile = () => {
       })}
     </div>
     <div className='page-section'>
-      {mobileData.map((item)=>{
+      {filteredProduct.map((item)=>{
    return(
     <div>
       <Link to={`/mobiles/${item.id}`}>

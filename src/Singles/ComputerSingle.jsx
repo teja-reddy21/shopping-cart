@@ -2,8 +2,10 @@ import React from 'react'
 import { computerData } from '../Stores/Data/computers'
 import { useParams } from 'react-router-dom'
 import Navbar from '../Stores/Components/Navbar'
+import { useCart } from '../Stores/Context/CartContext'
 const ComputerSingle = () => {
     const {id}=useParams()
+    const {addToCart}=useCart()
      const product =computerData.find((item)=>item.id===id)
      console.log(id)
   return (
@@ -17,16 +19,16 @@ const ComputerSingle = () => {
     <div className="ind-company">
       <h2>{product.company}</h2>
     </div>
-     <div className="ind-model">
+     <div className="ind-model space">
       <h3>{product.model}</h3>
     </div>
-    <div className="ind-price">
+    <div className="ind-price space">
       <h2>{product.price}</h2>
     </div>
-    <div className="ind-desc">
+    <div className="ind-desc space">
       <p>{product.description}</p>
     </div>
-    <button>Add to Cart</button>
+    <button onClick={()=>addToCart(product)}>Add to Cart</button>
    </div>
    </div>
    </>

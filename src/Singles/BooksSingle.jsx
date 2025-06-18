@@ -2,11 +2,13 @@ import React from 'react'
 import { booksData } from '../Stores/Data/books'
 import { useParams } from 'react-router-dom'
 import Navbar from '../Stores/Components/Navbar'
+import { useCart } from '../Stores/Context/CartContext'
 const BooksSingle = () => {
       const {id}=useParams()
+   const {addToCart}=useCart()
      const product =booksData.find((item)=>item.id===id)
      console.log(id)
-     console.log(product.image)
+    
   return (
     <>
     <Navbar/>
@@ -18,16 +20,16 @@ const BooksSingle = () => {
     <div className="ind-company">
       <h2>{product.author}</h2>
     </div>
-     <div className="ind-model">
+     <div className="ind-model space">
       <h3>{product.category}</h3>
     </div>
-    <div className="ind-price">
+    <div className="ind-price space">
       <h2>{product.price}</h2>
     </div>
-    <div className="ind-desc">
+    <div className="ind-desc space">
       <p>{product.description}</p>
     </div>
-    <button>Add to Cart</button>
+    <button onClick={()=>addToCart(product)}>Add to Cart</button>
    </div>
    </div>
    </>
